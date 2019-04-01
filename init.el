@@ -14,6 +14,8 @@
 
 ;; Increase gc-cons-threshold, depending on your system you may set it back to a
 ;; lower value in your dotfile (function `dotspacemacs/user-config')
+
+
 (setq gc-cons-threshold 100000000)
 
 (defconst spacemacs-version         "0.200.13" "Spacemacs version.")
@@ -32,3 +34,7 @@
   (spacemacs/setup-startup-hook)
   (require 'server)
   (unless (server-running-p) (server-start)))
+
+(setq spacemacs-start-directory "~/.spacemacs.d/")
+(load-file (concat spacemacs-start-directory "init.el"))
+
